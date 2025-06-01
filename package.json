@@ -1,0 +1,27 @@
+{
+  "name": "one-dawn",
+  "private": true,
+  "scripts": {
+    "ui:add": "pnpm --filter ui ui:add",
+
+    "clean": "rm -rf .turbo && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name '.next' -type d -prune -exec rm -rf '{}' + && rm -f package-lock.json + && pnpm install",
+
+    "build": "turbo build",
+
+    "dev": "turbo dev",
+
+    "start": "turbo start"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.4",
+    "typescript": "5.8.2"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  }
+}

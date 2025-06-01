@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "@one-dawn/ui/styles";
+
+.dark,
+:root[class~="dark"] {
+  color-scheme: dark;
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@one-dawn/web",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "start": "remix-serve ./build/server/index.js",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@remix-run/node": "^2.16.8",
+    "@remix-run/react": "^2.16.8",
+    "@remix-run/serve": "^2.16.8",
+    "@one-dawn/ui": "workspace:*",
+    "isbot": "^4.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remix-themes": "^1.5.1",
+    "sonner": "^1.7.3"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.16.8",
+    "@one-dawn/eslint-config": "workspace:*",
+    "@one-dawn/typescript-config": "workspace:*",
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.17.0",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.2",
+    "vite": "^6.0.7",
+    "vite-tsconfig-paths": "^5.1.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

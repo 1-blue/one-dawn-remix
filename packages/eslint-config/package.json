@@ -1,0 +1,18 @@
+{
+  "name": "@one-dawn/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./library.js",
+  "license": "MIT",
+  "dependencies": {
+    "@eslint/js": "^9.27.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-turbo": "^2.5.0",
+    "typescript-eslint": "^8.15.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "typescript": "^5.8.2"
+  }
+}
