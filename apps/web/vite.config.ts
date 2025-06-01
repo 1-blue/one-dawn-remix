@@ -31,5 +31,11 @@ export default defineConfig({
   },
   ssr: {
     noExternal: ["@one-dawn/ui"],
+    external: [
+      "@prisma/client",
+      "@prisma/adapter-neon",
+      "@neondatabase/serverless",
+      "ws",
+    ],
   },
 });

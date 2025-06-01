@@ -1,0 +1,9 @@
+model TemplateTwoDog {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("template_two_dogs")
+  @@schema("template_two")
+}
