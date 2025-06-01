@@ -24,6 +24,11 @@ export default defineConfig({
     tailwindcss(),
     tsconfigPaths(),
   ],
+  server: {
+    port: 9000,
+    open: true,
+    strictPort: true,
+  },
   resolve: {
     alias: {
       "#": resolve(__dirname, "./app"),
