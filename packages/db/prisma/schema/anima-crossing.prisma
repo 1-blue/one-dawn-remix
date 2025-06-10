@@ -1,0 +1,188 @@
+/// 주민 종족 목록
+enum AnimalCrossingVillagerSpecies {
+  Bird
+  Squirrel
+  Pig
+  Bear_cub
+  Gorilla
+  Alligator
+  Koala
+  Eagle
+  Anteater
+  Penguin
+  Bull
+  Mouse
+  Cat
+  Horse
+  Hamster
+  Kangaroo
+  Wolf
+  Chicken
+  Elephant
+  Rhinoceros
+  Lion
+  Sheep
+  Deer
+  Tiger
+  Dog
+  Bear
+  Cow
+  Hippo
+  Duck
+  Goat
+  Ostrich
+  Rabbit
+  Frog
+  Octopus
+  Monkey
+
+  @@map("animal_crossing_villager_species")
+  @@schema("animal_crossing")
+}
+
+/// 주민 성격 목록
+enum AnimalCrossingVillagerPersonality {
+  Jock
+  Cranky
+  Peppy
+  Big_sister
+  Lazy
+  Normal
+  Snooty
+  Smug
+
+  @@map("animal_crossing_villager_personality")
+  @@schema("animal_crossing")
+}
+
+/// 주민 성별 목록
+enum AnimalCrossingVillagerGender {
+  Male
+  Female
+
+  @@map("animal_crossing_villager_gender")
+  @@schema("animal_crossing")
+}
+
+/// 주민 생일 월 목록
+enum AnimalCrossingVillagerBirthdayMonth {
+  August
+  January
+  July
+  April
+  October
+  June
+  November
+  February
+  March
+  September
+  December
+  May
+
+  @@map("animal_crossing_villager_birthday_month")
+  @@schema("animal_crossing")
+}
+
+/// 주민 첫 등장 게임 목록
+enum AnimalCrossingVillagerDebut {
+  DNM
+  AC
+  E_PLUS
+  NH
+  PC
+  WA
+  WW
+  CF
+  NL
+  HHD
+  FILM
+  NLWA
+  DNM_PLUS
+
+  @@map("animal_crossing_villager_debut")
+  @@schema("animal_crossing")
+}
+
+/// 주민 생일 별자리 목록
+enum AnimalCrossingVillagerSign {
+  Leo
+  Aquarius
+  Cancer
+  Taurus
+  Capricorn
+  Libra
+  Gemini
+  Scorpio
+  Pisces
+  Virgo
+  Sagittarius
+  Aries
+
+  @@map("animal_crossing_villager_sign")
+  @@schema("animal_crossing")
+}
+
+model AnimalCrossingVillager {
+  id             String                            @id @default(cuid())
+  name           String                            @unique
+  url            String
+  alt_name       String
+  title_color    String
+  text_color     String
+  image_url      String
+  species        AnimalCrossingVillagerSpecies
+  personality    AnimalCrossingVillagerPersonality
+  gender         AnimalCrossingVillagerGender
+  birthday_month String
+  birthday_day   String
+  sign           AnimalCrossingVillagerSign
+  quote          String
+  phrase         String
+  clothing       String
+  islander       Boolean
+  debut          AnimalCrossingVillagerDebut
+  prev_phrases   String[]
+  appearances    AnimalCrossingVillagerDebut[]
+  createdAt      DateTime                          @default(now())
+  updatedAt      DateTime                          @updatedAt
+
+  name_kr           String
+  personality_kr    String
+  gender_kr         String
+  birthday_month_kr String
+  sign_kr           String
+  debut_kr          String
+  species_kr        String
+  quote_kr          String
+
+  @@map("animal_crossing_villager")
+  @@schema("animal_crossing")
+}
+
+// name: 'Ace',
+// url: 'https://nookipedia.com/wiki/Ace',
+// alt_name: '',
+// title_color: '0961f6',
+// text_color: 'fffce9',
+// image_url: 'https://dodo.ac/np/images/9/91/Ace_amiibo.png',
+// species: 'Bird',
+// personality: 'Jock',
+// gender: 'Male',
+// birthday_month: 'August',
+// birthday_day: '11',
+// sign: 'Leo',
+// quote: 'If you love something, let it go. Then chase it down. What were you thinking?',
+// phrase: 'ace',
+// clothing: 'kung-fu tee',
+// islander: false,
+// debut: 'DNM',
+// prev_phrases: [],
+// appearances: [ 'DNM', 'AC', 'E_PLUS', 'NH', 'PC' ],
+// name_kr: '페더',
+// personality_kr: '운동광',
+// gender_kr: '수컷',
+// birthday_month_kr: '8월',
+// sign_kr: '사자자리',
+// debut_kr: '동물의 숲',
+// species_kr: '새',
+// quote_kr: '사랑하는 것이 있다면 놓아주어라. 그리고 쫓아가라. 뭘 생각하고 있었던 거야?'
