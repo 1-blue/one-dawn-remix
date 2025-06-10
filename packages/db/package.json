@@ -1,0 +1,57 @@
+{
+  "name": "@one-dawn/db",
+  "version": "1.0.0",
+  "description": "Database package with Prisma and Neon",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "generated"
+  ],
+  "prisma": {
+    "schema": "prisma/schema"
+  },
+  "scripts": {
+    "build": "tsup",
+    
+    "db:clean": "rm -rf dist",
+
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:pull": "prisma db pull",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:reset": "prisma migrate reset",
+    "db:studio": "prisma studio",
+    "db:seed": "tsx prisma/seeds/index.ts"
+  },
+  "keywords": [
+    "prisma",
+    "neon",
+    "database",
+    "postgresql"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0",
+    "@prisma/adapter-neon": "^5.22.0",
+    "@prisma/client": "^6.1.0",
+    "prisma": "^6.1.0",
+    "ws": "^8.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.57",
+    "@types/ws": "^8.18.1",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

@@ -24,6 +24,11 @@ export default defineConfig({
     tailwindcss(),
     tsconfigPaths(),
   ],
+  server: {
+    port: 9000,
+    open: true,
+    strictPort: true,
+  },
   resolve: {
     alias: {
       "#": resolve(__dirname, "./app"),
@@ -31,5 +36,11 @@ export default defineConfig({
   },
   ssr: {
     noExternal: ["@one-dawn/ui"],
+    external: [
+      "@prisma/client",
+      "@prisma/adapter-neon",
+      "@neondatabase/serverless",
+      "ws",
+    ],
   },
 });

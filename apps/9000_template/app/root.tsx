@@ -13,7 +13,7 @@ import {
   PreventFlashOnWrongTheme,
 } from "remix-themes";
 
-import { cn, ThemeToggle } from "@one-dawn/ui";
+import { cn, Toaster } from "@one-dawn/ui";
 import { themeSessionResolver } from "./lib/theme/theme.server";
 
 import "#/styles/tailwind.css";
@@ -51,6 +51,8 @@ const App: React.FC = () => {
         <Links />
       </head>
       <body>
+        <Toaster />
+        {/* <ThemeToggle /> */}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
@@ -63,8 +65,6 @@ export default function AppWithProviders() {
 
   return (
     <ThemeProvider specifiedTheme={data.theme} themeAction="/action/set-theme">
-      <ThemeToggle />
-
       <App />
     </ThemeProvider>
   );

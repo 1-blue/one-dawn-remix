@@ -6,6 +6,17 @@
 
     "clean": "rm -rf .turbo && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name '.next' -type d -prune -exec rm -rf '{}' + && rm -f package-lock.json + && pnpm install",
 
+    "db:build": "pnpm --filter @one-dawn/db build",
+    "db:clean": "pnpm --filter @one-dawn/db db:clean",
+    "db:generate": "pnpm --filter @one-dawn/db db:generate",
+    "db:push": "pnpm --filter @one-dawn/db db:push",
+    "db:pull": "pnpm --filter @one-dawn/db db:pull",
+    "db:migrate": "pnpm --filter @one-dawn/db db:migrate",
+    "db:migrate:deploy": "pnpm --filter @one-dawn/db db:migrate:deploy",
+    "db:migrate:reset": "pnpm --filter @one-dawn/db db:migrate:reset",
+    "db:seed": "pnpm --filter @one-dawn/db db:seed",
+    "db:studio": "pnpm --filter @one-dawn/db db:studio",
+
     "build": "turbo build",
 
     "dev": "turbo dev",

@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Button } from "@one-dawn/ui";
+import { toast } from "sonner";
 
 export const meta: MetaFunction = () => {
   return [
@@ -101,7 +102,9 @@ export default function Index() {
         <div className="bg-card border border-border rounded-lg p-6">
           <h2 className="text-2xl font-semibold mb-4">🎨 컴포넌트 테스트</h2>
           <div className="flex flex-wrap gap-4">
-            <Button>Primary Button</Button>
+            <Button onClick={() => toast.success("Hello 123")}>
+              Primary Button
+            </Button>
             <Button variant="secondary">Secondary</Button>
             <Button variant="outline">Outline</Button>
             <Button variant="destructive">Destructive</Button>
