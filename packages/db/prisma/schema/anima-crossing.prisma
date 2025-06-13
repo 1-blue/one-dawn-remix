@@ -122,6 +122,40 @@ enum AnimalCrossingVillagerSign {
   @@schema("animal_crossing")
 }
 
+/// 주민 좋아하는 색상 목록
+enum AnimalCrossingVillagerFavColor {
+  Aqua
+  Green
+  Black
+  Blue
+  Pink
+  White
+  Red
+  Yellow
+  Brown
+  Colorful
+  Orange
+  Purple
+  Gray
+  Beige
+
+  @@map("animal_crossing_villager_fav_color")
+  @@schema("animal_crossing")
+}
+
+/// 주민 좋아하는 스타일 목록
+enum AnimalCrossingVillagerFavStyle {
+  Active
+  Cute
+  Cool
+  Simple
+  Elegant
+  Gorgeous
+
+  @@map("animal_crossing_villager_fav_style")
+  @@schema("animal_crossing")
+}
+
 model AnimalCrossingVillager {
   id             String                            @id @default(cuid())
   name           String                            @unique
@@ -130,6 +164,8 @@ model AnimalCrossingVillager {
   title_color    String
   text_color     String
   image_url      String
+  photo_url      String
+  icon_url       String
   species        AnimalCrossingVillagerSpecies
   personality    AnimalCrossingVillagerPersonality
   gender         AnimalCrossingVillagerGender
@@ -143,8 +179,12 @@ model AnimalCrossingVillager {
   debut          AnimalCrossingVillagerDebut
   prev_phrases   String[]
   appearances    AnimalCrossingVillagerDebut[]
-  createdAt      DateTime                          @default(now())
-  updatedAt      DateTime                          @updatedAt
+  fav_colors     AnimalCrossingVillagerFavColor[]  @default([])
+  fav_styles     AnimalCrossingVillagerFavStyle[]  @default([])
+  catchphrase    String                            @default("")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   name_kr           String
   personality_kr    String
@@ -154,6 +194,9 @@ model AnimalCrossingVillager {
   debut_kr          String
   species_kr        String
   quote_kr          String
+  fav_colors_kr     String[] @default([])
+  fav_styles_kr     String[] @default([])
+  catchphrase_kr    String   @default("")
 
   @@map("animal_crossing_villager")
   @@schema("animal_crossing")
