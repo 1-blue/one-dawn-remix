@@ -13,7 +13,7 @@ import {
   PreventFlashOnWrongTheme,
 } from "remix-themes";
 
-import { cn, Toaster } from "@one-dawn/ui";
+import { cn, ThemeToggle, Toaster } from "@one-dawn/ui";
 import { themeSessionResolver } from "./libs/theme/theme.server";
 
 import "#/styles/tailwind.css";
@@ -46,6 +46,8 @@ const App: React.FC = () => {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Remix" />
+        <link rel="canonical" href="https://animal-crossing.story-dict.com" />
         <Meta />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
         <Links />
