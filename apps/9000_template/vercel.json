@@ -1,0 +1,20 @@
+{
+  "buildCommand": "cd ../.. && pnpm install && pnpm build --filter=@one-dawn/9000-template",
+  "installCommand": "echo 'Using pnpm from buildCommand'",
+  "framework": null,
+  "outputDirectory": "build/client",
+  "functions": {
+    "build/server/index.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "env": {
+    "NODE_VERSION": "20"
+  },
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=4096",
+      "SKIP_ENV_VALIDATION": "1"
+    }
+  }
+} 
